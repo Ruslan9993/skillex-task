@@ -13,12 +13,20 @@ module.exports = {
     mode: mode,
     target: target,
 
+    output: {
+        assetModuleFilename: "images/[hash][ext][query]"
+    },
+
     devtool: "source-map",
     module: {
         rules: [
             {
+                test: /\.(png|jpe?g|git|svg)$/i,
+                type: "asset"
+            },
+            {
                 test: /\.(s[ac]|c)ss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                use: [{loader: MiniCssExtractPlugin.loader, options: { publicPath: ""}},, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.jsx?$/,
