@@ -1,8 +1,11 @@
-import { render } from 'react-dom'
+import ReactDOM from "react-dom";
 import App from "./components/App";
-import './styles/index.scss';
+import { StoreProvider } from "./store/StoreProvider";
+import "./styles/index.scss";
 
-render(<App />, document.getElementById('root'))
-
-
-console.log('test console')
+ReactDOM.render(
+    <StoreProvider>
+        <App />
+    </StoreProvider>,
+    document.getElementById("root")
+);

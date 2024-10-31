@@ -1,14 +1,13 @@
-import background from '../../images/backgroundImg.fbab3f40.png'
-
-import './index.scss'
+import ProductCatalog from "../ProductsCatalog/index";
+import "antd/dist/reset.css";
+import "../../styles/index.scss";
 
 const App = () => {
     return (
-        <>
-            <div className="root">App</div>
-            <img src={background} alt="Background" width="250px" />
-        </>
-    )
-}
+        <div className="app">
+            <ProductCatalog />
+        </div>
+    );
+};
 
-export default App
+export default App;
